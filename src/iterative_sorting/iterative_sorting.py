@@ -3,11 +3,14 @@ def selection_sort(arr):
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
         for j in range(i + 1, len(arr)):
+            # commented tmp var code is equivalent
+            # use comma notation instead
             # tmp = arr[j]
             if arr[j] < arr[i]:
                 arr[j], arr[i] = arr[i], arr[j]
                 # arr[j] = arr[i]
                 # arr[i] = tmp
+    # code below was first attempt. prompt for the assignment came with cur_index and smallest_index defined
         # cur_index = i
         # smallest_index = cur_index
         # TO-DO: find next smallest element
