@@ -47,25 +47,19 @@ def binary_search_recursive(arr, target, low, high):
         return -1  # array empty
     # TO-DO: add missing if/else statements, recursive calls
     mid_val = arr[middle]
-    print(f"mid_val: {mid_val}")
-    print(f"target: {target}")
     if mid_val == target:
         # found
-        print(f"found@{middle}")
         return middle
-        print("here?")
     elif mid_val > target:
         # check LHS
-        print("check LHS")
         high = middle
         result = binary_search_recursive(arr, target, low, high)
     elif mid_val < target:
         # check RHS
-        print("check RHS")
         low = middle
         result = binary_search_recursive(arr, target, low, high)
     else:
         # ??
         return -1
-
+    # don't forget to return a result!!
     return result
