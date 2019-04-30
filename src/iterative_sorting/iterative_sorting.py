@@ -50,6 +50,27 @@ def bubble_sort(arr):
 
 
 # STRETCH: implement the Count Sort function below
+# https://en.wikipedia.org/wiki/Counting_sort
+# https://visualgo.net/en/sorting
 def count_sort(arr, maximum=-1):
+    # if maximum is not provided (default to -1), find max
+    for i in range(0, len(arr)):
+        if arr[i] > maximum:
+            maximum = arr[i]
+        if arr[i] < 0:
+            return "Error, negative numbers not allowed in Count Sort"
+    # create "count".. array to hold count of each possible value.."histogram"
+    count = [0] * (maximum + 1)
+    # populate "count" with counts of each element's occurrence
+    for i in range(0, len(arr)):
+        count[arr[i]] += 1
+    # populate arr with sorted values
+    # keep track of arr index
+    j = 0
+    for i in range(0, len(count)):
+        while count[i] > 0:
+            arr[j] = i
+            count[i] -= 1
+            j += 1
 
     return arr
