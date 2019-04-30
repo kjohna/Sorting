@@ -26,7 +26,7 @@ def merge_sort(arr):
     if len(arr) > 1:
         arrA = merge_sort(arr[:len(arr) // 2])
         arrB = merge_sort(arr[len(arr) // 2:])
-        merge(arrA, arrB)
+        arr = merge(arrA, arrB)
     return arr
 
 
