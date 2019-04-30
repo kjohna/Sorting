@@ -53,13 +53,11 @@ def binary_search_recursive(arr, target, low, high):
     elif mid_val > target:
         # check LHS
         high = middle
-        result = binary_search_recursive(arr, target, low, high)
+        return binary_search_recursive(arr, target, low, high)
     elif mid_val < target:
         # check RHS
         low = middle
-        result = binary_search_recursive(arr, target, low, high)
+        return binary_search_recursive(arr, target, low, high)
     else:
         # ??
         return -1
-    # don't forget to return a result!!
-    return result
